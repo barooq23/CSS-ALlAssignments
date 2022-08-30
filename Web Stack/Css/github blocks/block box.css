@@ -1,0 +1,49 @@
+#laith{
+    background-color: #E9F6FF;
+    height: 777px;
+    width: 900px;
+    outline: 1px solid   black  ;
+}
+#barq {
+    width: 900px;
+    height: 200px;
+    background-color: #4FC3EB;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+img{
+    height: 200px;
+}
+#ma{
+    width: 900px;
+    height: 200px;
+    background-color: #caa3af;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+h1{
+    text-align: center;
+}
+
+#na{
+    width: 900px;
+    height: 200px;
+    background-color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+footer{
+    text-align: center  ;
+    margin: 50px;
+}
+footer a{
+    color: lightblue;
+    text-decoration: underline;
+}
+body {
+    display: block;
+    margin: 180px;
+}
