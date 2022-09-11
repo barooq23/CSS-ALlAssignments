@@ -1,0 +1,56 @@
+insert into dojos (name) 
+VALUES('zaki');
+
+insert into dojos (name) 
+VALUES('sura');
+
+insert into dojos (name) 
+VALUES('haneen'); 
+
+
+delete from dojos
+
+
+insert into dojos (name) 
+VALUES('zaki');
+
+insert into dojos (name) 
+VALUES('sura');
+
+insert into dojos (name) 
+VALUES('haneen'); 
+
+
+insert into ninjas (first_name, last_name, age, dojo_id) 
+VALUES('laith', 'Barq', 23, 4); 
+
+insert into ninjas (first_name, last_name, age, dojo_id) 
+VALUES('izz', 'Malakh', 24, 4); 
+
+insert into ninjas (first_name, last_name, age, dojo_id) 
+VALUES('ahmmad', 'Hamdan', 23, 4); 
+
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('Chan', 'Jacky',20, CURDATE(), CURDATE(), 5); 
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('Sponge', 'Bob', 15, CURDATE(), CURDATE(), 5); 
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('Gumball', 'Watterson', 25, CURDATE(), CURDATE(), 5);
+
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('Music', 'Jazz',34, CURDATE(), CURDATE(), 6); 
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('gee', 'cow', 35, CURDATE(), CURDATE(), 6); 
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('HOLY', 'nIGGA', 32, CURDATE(), CURDATE(), 6); 
+
+select * from ninjas where dojo_id = 4
+
+
+select * from ninjas where dojo_id = 6

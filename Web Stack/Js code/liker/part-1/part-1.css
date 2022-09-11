@@ -1,0 +1,28 @@
+.ninja{
+    border: 2px solid black;
+    /* display: flex;
+    align-items: center; */
+    width: 400px;
+    height: 140px;
+    margin: 20px;
+    }
+.ninjas{
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    height: 38px;
+    margin-top: 20px;
+    width: 70px;
+    background-color: #FFD866;
+    border: black solid 2px; 
+    box-shadow: 3px 3px;
+}
+.para{
+    margin-top: 29px;
+    margin-left: 20px;
+}
+p{
+    margin-top: 5px;
+    margin-left: 20px;
+}
