@@ -1,3 +1,6 @@
+from multiprocessing.util import sub_warning
+
+
 class User:
     def __init__(self, name, email):
         self.name = name
@@ -14,15 +17,15 @@ class User:
         other_user.account_balance +=amount
         
         
-Amin = User("Amin", "Amin@amin.com")
-Zaki = User("Zaki", "Zaki@zaki.com")
-Fatemah = User("Fatemah", "Fatemah@fatemah.com")
+laith = User("laith", "Barqlaith@gmail.com")
+Zaki = User("Zaki", "ZakiNahhas@gmail.com")
+sura = User("sura", "sura@gmail.com")
 
-Amin.make_deposit(50)
-Amin.make_deposit(30)
-Amin.make_deposit(500)
-Amin.make_withdrawl(200)
-Amin.display_user_balance()
+laith.make_deposit(50)
+laith.make_deposit(30)
+laith.make_deposit(500)
+laith.make_withdrawl(200)
+laith.display_user_balance()
 
 Zaki.make_deposit(500)
 Zaki.make_deposit(400)
@@ -30,10 +33,10 @@ Zaki.make_withdrawl(500)
 Zaki.make_withdrawl(100)
 Zaki.display_user_balance()
 
-Fatemah.make_deposit(2000)
-Fatemah.make_withdrawl(500)
-Fatemah.make_withdrawl(100)
-Fatemah.make_withdrawl(50)
-Fatemah.display_user_balance()
-Fatemah.transfer_money(Zaki, 100)
+sura.make_deposit(2000)
+sura.make_withdrawl(500)
+sura.make_withdrawl(100)
+sura.make_withdrawl(50)
+sura.display_user_balance()
+sura.transfer_money(Zaki, 100)
 Zaki.display_user_balance()

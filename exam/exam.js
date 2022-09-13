@@ -31,11 +31,11 @@ function buy3(){
 //     const result = document.querySelector('.result');
 //     result.textContent = `You like ${event.target.value}`;
 //   });
-var x = document.getElementById("spn".valueOn);
+var x = document.getElementById("selling");
 function changeCart(){
-    if(x==='Best-Selling'){
-    document.getElementById("spn")= "Best Selling";
-    }else if(x ==='Price')
-    document.getElementById("spn")= "Price";
+    if(x.value =='Best-Selling'){
+    document.getElementById("spn").innerText= "Best Selling";
+    }else if(x.value =='Price')
+    document.getElementById("spn").innerText= "Price";
 }
 
