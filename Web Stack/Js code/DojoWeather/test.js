@@ -10,3 +10,8 @@ return newArr;
 }
 fruits = addFirst(fruits, "kiwi")
 console.log(fruits);
+
+
+var x = 5;
+console.log(window)
+console.log(window.x)

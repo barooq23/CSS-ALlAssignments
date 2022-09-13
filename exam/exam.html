@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="exam.css" />
+  </head>
+  <body>
+    <header>
+      <h2>FREE PHONE GRIP ON SELECT PURCHASES</h2>
+      <nav class="top-nav">
+        <h1>PlushStar</h1>
+        <input type="text" class="text" placeholder="search.." />
+        <span>
+            <p class="cart">0</p>
+          <img src="exam-img/cart-dark.png" alt=""
+        /></span>
+      </nav>
+      <nav class="bottom-nav">
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#">Products</a>
+        <a href="#">Sales</a>
+        <a href="#">Blog</a>
+        <a href="#" onclick="contactus()">Contact Us</a>
+      </nav>
+    </header>
+    <main>
+      <h1 class="move">Plushy Store</h1>
+      <main class="top-main">
+        <p>62 Products, sorted by <span id="spn">Best Selling</span></p>
+        <label class="sele"
+          >Sort By
+          <select name="selling" id="selling" onchange="changeCart()">
+            <option value="Best-Selling">Best Selling</option>
+            <option value="Price">Price</option>
+          </select>
+        </label>
+      </main>
+      <main class="bottom-main">
+        <div class="photo">
+          <img src="exam-img/banda.png" alt="" />
+          <p>Mischief Mouse</p>
+          <button type="button" class="btn" onclick="buy()">Buy</button>
+        </div>
+        <div class="photo">
+          <img src="exam-img/banda.png" alt="" />
+          <p>Shy Shrew</p>
+          <button type="button" class="btn" onclick="buy1()">Buy</button>
+        </div>
+        <div class="photo">
+          <img src="exam-img/banda.png" alt="" />
+          <p>Hangry Hamster</p>
+          <button type="button" class="btn" onclick="buy2()">Buy</button>
+        </div>
+        <div class="photo" class="btn">
+          <img src="exam-img/banda.png" alt="" />
+          <p>Chilly Chinchilla</p>
+          <button type="button" class="btn" onclick="buy3()">Buy</button>
+        </div>
+      </main>
+    </main>
+
+    <script src="exam.js"></script>
+  </body>
+</html>
