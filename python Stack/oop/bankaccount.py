@@ -25,4 +25,4 @@ barqAccount = Bank_account(0.04, 2400)
 
 
 laithAccount.deposit(100).deposit(200).deposit(300).withdraw(200).yield_interest().display_account_info()
-barqAccount.deposit(700).deposit(200).withdraw(200).withdraw(200).withdraw(200).withdraw(200).yield_interest().display_account_info()
+barqAccount.deposit(700).deposit(200).withdraw(200).withdraw(200).withdraw(200).withdraw(200).yield_interest().display_account_info()   
