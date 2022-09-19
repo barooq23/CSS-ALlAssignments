@@ -10,8 +10,26 @@
     <h1>Index Page</h1>
     <h3>Create a User</h3>
     <form action="/users" method="post">
-      Name: <input type="text" name="name" /> Email:
-      <input type="text" name="email" />
+      <p></p>Name: <input type="text" name="name" /></p>
+      <p>Email:<input type="text" name="email" /></p>
+      <p>Dojo Location:
+        <select name="location">
+          <option value="nablus">nablus</option>
+          <option value="ramallah">ramallah</option>
+          <option value="jordan">jordan</option>
+        </select>
+      </p>
+      <p>Favorite language:
+        <select name="fav_lang">
+          <option value="java">java</option>
+          <option value="python">python</option>
+          <option value="php">php</option>
+        </select>
+      </p>
+      <p>comment(optional):</p>
+      <p>
+        <textarea name="comment" cols="40" rows="5"></textarea>
+      </p>
       <input type="submit" value="create user" />
     </form>
   </body>
