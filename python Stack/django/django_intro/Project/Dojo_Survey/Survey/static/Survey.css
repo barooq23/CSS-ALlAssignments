@@ -1,0 +1,13 @@
+form{
+    width: 600px;
+    
+    background-color: #3c1e42;
+    font-size: 26px;
+    padding: 12px;
+    margin: 20px auto;
+    color: #db2d48;
+}
+form input{
+    color: #db2d48;
+    background-color: #3c1e42;
+}
