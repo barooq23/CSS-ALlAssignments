@@ -7,45 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="contaner">
-        <form method="post" action="/addbook">
+        <form method="post" action="/addauther">
             {%csrf_token %}
-            <h1>Add a Book</h1>
+            <h1>Add a Auther</h1>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Title:</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
+                <label for="exampleFormControlInput1" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="first_name">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Description:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="last_name">
             </div>
             <button type="submit" value="send form" class="btn btn-primary mb-3">Add</button>
         </form>
         <form action="">
-            <table class="table table-bordered">
+            <table class="table table-bordered" >
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Title</th>
+                        <th scope="col">First-Name</th>
+                        <th scope="col">Last-Name</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
-                {% for bk in books %}
+                {% for auth in authers %}
                 <tr>
                     <td>
-                        {{bk.id}}
+                        {{auth.id}}
                     </td>
                     <td>
-                        {{bk.title}}
+                        {{auth.first_name}} 
                     </td>
                     <td>
-                        <a href="/books/{{bk.id}}">view</a>
+                        {{auth.last_name}}
+                    </td>
+                    <td>
+                        <a href="/authers/{{auth.id}}">view</a>
                     </td>
                 </tr>
                 {% endfor %}

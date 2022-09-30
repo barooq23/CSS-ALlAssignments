@@ -1,8 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 .contaner{
     display: flex;
     justify-content: space-evenly;
+    margin-top: 2%;
 }
