@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/viewPost.css'%}">
+    {% load static %}
+    <link rel="stylesheet" href="static/icons">
+    <style>
+        body {
+            padding-left: 50px;
+            padding-top: 50px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
+        }
+
+        .head {
+            display: flex;
+            align-items: center;
+        }
+
+        .head p {
+            font-size: 1.3rem;
+        }
+
+        #pa {
+            font-size: 1.3rem;
+        }
+
+        .container {
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 50%;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+        }
+
+        .bottom input {
+            outline: none;
+            font-size: 16px;
+            color: #4070f4;
+            border-bottom: 2px solid #ccc;
+            border-top: 2px solid transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/logout">LogOut</a>
+    {% for i in allpost %}
+    <div class="container">
+        <div class="head">
+            <sub><img src="/static/icons/Logo.png"></sub>
+            <p>{{i.user.name}}</p>
+        </div>
+
+
+        <p id="pa">{{i.content}}</p>
+        <div class="bottom">
+            
+           
+            {% for j in allcomment %} 
+            {% if j.post.id == i.id %}
+                <p>{{j.user.name}} write :</p>
+                <p id="pa">{{j.content}}</p>
+                {% endif %}
+            {% endfor %}
+            <form action="/wall/comment" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="hide" value="{{i.id}}">
+                <input type="text" placeholder="add your comment" name="coment">
+                <input type="submit" value="Add a comment">
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+
+
+</body>
+
+</html>
