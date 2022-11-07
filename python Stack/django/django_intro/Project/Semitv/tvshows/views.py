@@ -23,10 +23,7 @@ def createshow(request):
     else:
         t1=Show.objects.create(title=request.POST['title'],network=request.POST['network'],relasedate=request.POST['relasedate'],description=request.POST['description'])
         ids=t1.id
-            # context= {
-            #     "createid":Show.objects.last(),
-            #     "showid":Show.objects.get(id=id),
-            # }
+
         return redirect(f"/show/{ids}")
 
 def shows(request):

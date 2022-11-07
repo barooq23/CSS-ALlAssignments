@@ -1,0 +1,14 @@
+.won {
+    color: green;
+}
+.lost {
+    color: red;
+}
+.activities {
+    overflow: scroll;
+    height: 150px;
+    width: 100%;
+}
+span {
+    color:rgb(185, 140, 27);
+}

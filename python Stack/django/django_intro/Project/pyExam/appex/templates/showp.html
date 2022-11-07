@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newshow</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+
+    <div class="top">
+        <div class="right">
+            <h1>Arbortrary</h1>
+            <p>A site to track randomly planted trees</p>
+        </div>
+        <div class="left">
+            <a href="/mytree">My Trees</a>
+            <h2>Welcome,{{request.session.user_name}}!</h2>
+        </div>
+    </div>
+    <div class="top1">
+        <button id="cc"> <a class="a1" href="/logout">logout</a> </button>
+        <button> <a class="a1" href="/dashboard">Dashboard</a> </button>
+    </div>
+<br><br><br><br>
+    <h1>Weeping {{arbo.species}} by {{arbo.id}}</h1>
+    <p>Species :{{arbo.species}}</p>
+    <p>Location : {{arbo.location}}</p>
+    <p>Relase Date : {{arbo.relasedate}}</p>
+    <p>Reason: {{arbo.reason}}</p>
+    <br><br>
+    
+</body>
+</html>   
