@@ -37,7 +37,8 @@ public class Ninjagold {
             ArrayList<String> temp_activities = (ArrayList<String>) session.getAttribute("activities");
             temp_activities.add(0, "Earned " + n + " gold from the farm! " + formattedDate);
             session.setAttribute("activities", temp_activities);
-        } else if("cave".equals(building)) {
+        }
+        else if("cave".equals(building)) {
             session.setAttribute("message", " ");
             Random r = new Random();
             int max = 10;
@@ -50,7 +51,8 @@ public class Ninjagold {
             ArrayList<String> temp_activities = (ArrayList<String>) session.getAttribute("activities");
             temp_activities.add(0, "Earned " + n + " gold from the cave! " + formattedDate);
             session.setAttribute("activities", temp_activities);
-        } else if("house".equals(building)) {
+        }
+        else if("house".equals(building)) {
             session.setAttribute("message", " ");
             Random r = new Random();
             int max = 5;
@@ -63,7 +65,8 @@ public class Ninjagold {
             ArrayList<String> temp_activities = (ArrayList<String>) session.getAttribute("activities");
             temp_activities.add(0, "Earned " + n + " gold from the house! " + formattedDate);
             session.setAttribute("activities", temp_activities);
-        } else if("casino".equals(building)) {
+        }
+        else if("casino".equals(building)) {
             session.setAttribute("message", " ");
             Random r = new Random();
             int max = 50;
