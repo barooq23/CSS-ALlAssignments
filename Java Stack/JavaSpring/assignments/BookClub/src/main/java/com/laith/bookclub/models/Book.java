@@ -14,7 +14,7 @@ import java.util.Date;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long   id;
+    private Long id;
     @NotNull
     @Size(min = 5, max = 200, message = "Title should be more than 5 and less than 200 baby")
     private String title;
@@ -26,15 +26,15 @@ public class Book {
     private String author;
     @Column(updatable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date   createdAt;
+    private Date createdAt;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date   updatedAt;
+    private Date updatedAt;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User   user;
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="borrower_id")
+    @JoinColumn(name = "borrower_id")
     private User borrower;
 
     public Book() {

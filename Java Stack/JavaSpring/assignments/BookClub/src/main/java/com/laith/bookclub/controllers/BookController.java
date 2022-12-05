@@ -8,13 +8,7 @@ import com.laith.bookclub.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -79,7 +73,7 @@ public class BookController {
     @GetMapping("/books")
     public String allBooks(Model model, HttpSession session) {
         if (session.getAttribute("user_id") != null) {
-            Long user_id = (Long)session.getAttribute("user_id");
+            Long user_id = (Long) session.getAttribute("user_id");
             User thisUser = userService.findUserById(user_id);
             model.addAttribute("thisUser", thisUser);
             List<Book> books = bookService.allBooks();
@@ -94,7 +88,7 @@ public class BookController {
     @RequestMapping("/books/new")
     public String newBook(@ModelAttribute("book") Book book, HttpSession session, Model model) {
         if (session.getAttribute("user_id") != null) {
-            Long userId = (Long)session.getAttribute("user_id");
+            Long userId = (Long) session.getAttribute("user_id");
             User user = userService.findUserById(userId);
             model.addAttribute("user", userId);
             return "newBook.jsp";
@@ -107,7 +101,7 @@ public class BookController {
         if (result.hasErrors()) {
             return "newBook.jsp";
         } else {
-            Long userId = (Long)session.getAttribute("user_id");
+            Long userId = (Long) session.getAttribute("user_id");
             User currentUser = userService.findUserById(userId);
             book.setUser(currentUser);
             bookService.createBook(book);
@@ -131,19 +125,20 @@ public class BookController {
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {
-            Long userId = (Long)session.getAttribute("user_id");
+            Long userId = (Long) session.getAttribute("user_id");
             User currentUser = userService.findUserById(userId);
             book.setUser(currentUser);
             bookService.updateBook(book);
             return "redirect:/books";
         }
     }
+
     @PutMapping(value = "/books2/{id}")
     public String update2(@Valid @ModelAttribute("book") Book book, BindingResult result, HttpSession session) {
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {
-            Long userId = (Long)session.getAttribute("user_id");
+            Long userId = (Long) session.getAttribute("user_id");
             User currentUser = userService.findUserById(userId);
             book.setUser(currentUser);
             bookService.updateBook(book);
@@ -156,11 +151,13 @@ public class BookController {
         bookService.deleteBook(id);
         return "redirect:/books";
     }
+
     @GetMapping("/bookmarketDel/{id}")
     public String destroy2(@PathVariable("id") Long id) {
         bookService.deleteBook(id);
         return "redirect:/bookmarket";
     }
+
     @GetMapping("/bookmarket")
     public String bookmarket(HttpSession session, Model model) {
 
@@ -184,7 +181,7 @@ public class BookController {
     public String borrowBook(@PathVariable("bookID") Long bookID, HttpSession session) {
 
         Long userId = (Long) session.getAttribute("user_id");
-        if(userId == null) {
+        if (userId == null) {
             return "redirect:/logout";
         }
         bookService.addBorrower(bookService.findBook(bookID), userService.findUserById(userId));
@@ -195,7 +192,7 @@ public class BookController {
     @RequestMapping("/bookmarket/return/{bookID}")
     public String returnBook(@PathVariable("bookID") Long bookID, HttpSession session) {
 
-        if(session.getAttribute("user_id") == null) {
+        if (session.getAttribute("user_id") == null) {
             return "redirect:/logout";
         }
         bookService.removeBorrower(bookService.findBook(bookID));

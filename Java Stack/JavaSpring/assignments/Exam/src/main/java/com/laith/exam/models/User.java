@@ -1,4 +1,4 @@
-package com.laith.bookclub.models;
+package com.laith.exam.models;
 
 import lombok.Data;
 import lombok.Getter;
@@ -24,7 +24,7 @@ public class User {
     private Long id;
 
     @NotEmpty(message = "Username is required!")
-    @Size(min = 3, max = 30, message = "Username must be between 3 and 30 characters")
+    @Size(min = 5, max = 30, message = "Username must be between 5 and 30 characters")
     private String userName;
 
     @NotEmpty(message = "Email is required!")
@@ -46,16 +46,13 @@ public class User {
     private Date updatedAt;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Book> books;
+    private List<Team> teams;
 
-    @Column(updatable = false)
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Book> borrowedBooks;
 
     public User() {
     }
 
-    public User(Long id, String userName, String email, String password, String confirm, Date createdAt, Date updatedAt, List<Book> books) {
+    public User(Long id, String userName, String email, String password, String confirm, Date createdAt, Date updatedAt, List<Team> teams) {
         this.id = id;
         this.userName = userName;
         this.email = email;
@@ -63,7 +60,7 @@ public class User {
         this.confirm = confirm;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.books = books;
+        this.teams = teams;
     }
 
     @PrePersist
@@ -76,5 +73,3 @@ public class User {
         this.updatedAt = new Date();
     }
 }
-
-

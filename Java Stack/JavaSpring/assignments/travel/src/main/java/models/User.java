@@ -1,14 +1,15 @@
-package com.laith.bookclub.models;
+package models;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
 import java.util.Date;
 import java.util.List;
 
@@ -46,11 +47,11 @@ public class User {
     private Date updatedAt;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Book> books;
+    private List<Travel> travels;
 
     @Column(updatable = false)
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Book> borrowedBooks;
+    private List<Travel> travelbooking;
 
     public User() {
     }
@@ -63,7 +64,7 @@ public class User {
         this.confirm = confirm;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.books = books;
+        this.travels = travels;
     }
 
     @PrePersist
@@ -76,5 +77,3 @@ public class User {
         this.updatedAt = new Date();
     }
 }
-
-
