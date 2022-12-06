@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+// import Laith from './components/Laith';
 
 function App() {
   return (
     <div className="App">
+      {/* <Laith /> */}
       <h1>Hello Dojo!</h1>
       <h2>things i need to do</h2>
       <ul>
