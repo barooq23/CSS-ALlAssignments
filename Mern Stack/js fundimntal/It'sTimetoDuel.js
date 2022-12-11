@@ -58,14 +58,14 @@ const Effect3 = new Effect(
 );
 
 //first Effect
-// console.log(Unit1.res)
-// Effect1.play(Unit1);
-// console.log(Unit1.res);
+console.log(Unit1.res)
+Effect1.play(Unit1);
+console.log(Unit1.res);
 
 //sec Effect
-// console.log(Unit1.res);
-// Effect2.play(Unit1);
-// console.log(Unit1.res);
+console.log(Unit1.res);
+Effect2.play(Unit1);
+console.log(Unit1.res);
 
 //third Effect
 // console.log(Unit1.power);
@@ -73,6 +73,6 @@ const Effect3 = new Effect(
 // console.log(Unit1.power);
 
 //attack
-// console.log(Unit2.res);
-// Unit1.attack(Unit2);
-// console.log(Unit2.res);
+console.log(Unit2.res);
+Unit1.attack(Unit2);
+console.log(Unit2.res);
