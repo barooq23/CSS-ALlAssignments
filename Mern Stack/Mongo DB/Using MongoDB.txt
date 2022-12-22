@@ -1,0 +1,253 @@
+> show collections
+students
+> db.students.insert({name:"Yosef" ,home_state:"Palestine" ,lucky_number:8,birthday:{month:3,day:6,year:1999}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:"Laith" ,home_state:"Palestine" ,lucky_number:2,birthday:{month:8,day:9,year:1999}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:"Rami" ,home_state:"Palestine" ,lucky_number:8,birthday:{month:6,day:5,year:1999}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:"Moean" ,home_state:"Palestine" ,lucky_number:2,birthday:{month:7,day:2,year:1992}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:"Jami" ,home_state:"Palestine" ,lucky_number:4,birthday:{month:9,day:2,year:1994}})
+WriteResult({ "nInserted" : 1 })
+> db.students.find()
+{ "_id" : ObjectId("63a2c89e01df62e9c859096c"), "name" : "Yosef", "home_state" : "Palestine", "lucky_number" : 8, "birthday" : { "month" : 3, "day" : 6, "year" : 1999 } }
+{ "_id" : ObjectId("63a2c8cf01df62e9c859096d"), "name" : "Laith", "home_state" : "Palestine", "lucky_number" : 2, "birthday" : { "month" : 8, "day" : 9, "year" : 1999 } }
+{ "_id" : ObjectId("63a2c8ec01df62e9c859096e"), "name" : "Rami", "home_state" : "Palestine", "lucky_number" : 8, "birthday" : { "month" : 6, "day" : 5, "year" : 1999 } }
+{ "_id" : ObjectId("63a2c8f701df62e9c859096f"), "name" : "Moean", "home_state" : "Palestine", "lucky_number" : 2, "birthday" : { "month" : 7, "day" : 2, "year" : 1992 } }
+{ "_id" : ObjectId("63a2c90301df62e9c8590970"), "name" : "Jami", "home_state" : "Palestine", "lucky_number" : 4, "birthday" : { "month" : 9, "day" : 2, "year" : 1994 } }
+> db.students.find({$or:[{home_state:"California"},{home_state:"Washington"}]}).pretty()
+> db.students.find({$or:[{home_state:"Palestine"},{home_state:"Jordan"}]}).pretty()
+{
+        "_id" : ObjectId("63a2c89e01df62e9c859096c"),
+        "name" : "Yosef",
+        "home_state" : "Palestine",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 3,
+                "day" : 6,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8cf01df62e9c859096d"),
+        "name" : "Laith",
+        "home_state" : "Palestine",
+        "lucky_number" : 2,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8ec01df62e9c859096e"),
+        "name" : "Rami",
+        "home_state" : "Palestine",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 6,
+                "day" : 5,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8f701df62e9c859096f"),
+        "name" : "Moean",
+        "home_state" : "Palestine",
+        "lucky_number" : 2,
+        "birthday" : {
+                "month" : 7,
+                "day" : 2,
+                "year" : 1992
+        }
+}
+{
+        "_id" : ObjectId("63a2c90301df62e9c8590970"),
+        "name" : "Jami",
+        "home_state" : "Palestine",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 9,
+                "day" : 2,
+                "year" : 1994
+        }
+}
+> db.students.find({lucky_number:{$gt:3}}).pretty()
+{
+        "_id" : ObjectId("63a2c89e01df62e9c859096c"),
+        "name" : "Yosef",
+        "home_state" : "Palestine",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 3,
+                "day" : 6,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8ec01df62e9c859096e"),
+        "name" : "Rami",
+        "home_state" : "Palestine",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 6,
+                "day" : 5,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c90301df62e9c8590970"),
+        "name" : "Jami",
+        "home_state" : "Palestine",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 9,
+                "day" : 2,
+                "year" : 1994
+        }
+}
+> db.students.find({lucky_number:{$lte:10}}).pretty()
+{
+        "_id" : ObjectId("63a2c89e01df62e9c859096c"),
+        "name" : "Yosef",
+        "home_state" : "Palestine",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 3,
+                "day" : 6,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8cf01df62e9c859096d"),
+        "name" : "Laith",
+        "home_state" : "Palestine",
+        "lucky_number" : 2,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8ec01df62e9c859096e"),
+        "name" : "Rami",
+        "home_state" : "Palestine",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 6,
+                "day" : 5,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8f701df62e9c859096f"),
+        "name" : "Moean",
+        "home_state" : "Palestine",
+        "lucky_number" : 2,
+        "birthday" : {
+                "month" : 7,
+                "day" : 2,
+                "year" : 1992
+        }
+}
+{
+        "_id" : ObjectId("63a2c90301df62e9c8590970"),
+        "name" : "Jami",
+        "home_state" : "Palestine",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 9,
+                "day" : 2,
+                "year" : 1994
+        }
+}
+> db.students.find({$and:[{lucky_number:{$gt:1}},{lucky_number:{$lt:10}}]}).pretty()
+{
+        "_id" : ObjectId("63a2c89e01df62e9c859096c"),
+        "name" : "Yosef",
+        "home_state" : "Palestine",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 3,
+                "day" : 6,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8cf01df62e9c859096d"),
+        "name" : "Laith",
+        "home_state" : "Palestine",
+        "lucky_number" : 2,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8ec01df62e9c859096e"),
+        "name" : "Rami",
+        "home_state" : "Palestine",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 6,
+                "day" : 5,
+                "year" : 1999
+        }
+}
+{
+        "_id" : ObjectId("63a2c8f701df62e9c859096f"),
+        "name" : "Moean",
+        "home_state" : "Palestine",
+        "lucky_number" : 2,
+        "birthday" : {
+                "month" : 7,
+                "day" : 2,
+                "year" : 1992
+        }
+}
+{
+        "_id" : ObjectId("63a2c90301df62e9c8590970"),
+        "name" : "Jami",
+        "home_state" : "Palestine",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 9,
+                "day" : 2,
+                "year" : 1994
+        }
+}
+> db.students.updateMany({}, {$set:{interests:["coding", "brunch","MongoDB"]}})
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 5 }
+> db.students.update({name: "Jami"},{$push: {interests: 'snowboarding'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({name: "Laith"},{$push: {interests: 'asd'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({name: "Rami"},{$push: {interests: 'xzc'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({name: "Moean"},{$push: {interests: 'tre'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.updateMany({}, {$push:{interests:["Trrr"]}})
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 5 }
+> db.students.update({name: "Laith"},{$push: {interests: 'taxes'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({name: "Laith"},{$pull: {interests: 'taxes'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.remove({home_state:"California"})
+WriteResult({ "nRemoved" : 0 })
+> db.students.remove({lucky_number:{$gt:5}}, true)
+WriteResult({ "nRemoved" : 1 })
+> db.students.updateMany({}, {$set:{number_of_belts:0}})
+{ "acknowledged" : true, "matchedCount" : 4, "modifiedCount" : 4 }
+> db.students.updateMany({}, { $inc: { number_of_belts: 1 } })
+{ "acknowledged" : true, "matchedCount" : 4, "modifiedCount" : 4 }
+> db.students.updateMany({home_state:"Jordan"}, { $inc: { belts_earned: 1 } })
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.students.updateMany(    {},    { $rename: { 'number_of_belts': 'belts_earned'} } )
+{ "acknowledged" : true, "matchedCount" : 4, "modifiedCount" : 4 }
+> db.students.updateMany({}, {$unset: {"lucky_number": ""}})
+{ "acknowledged" : true, "matchedCount" : 4, "modifiedCount" : 4 }
+> db.students.updateMany({}, {$set:{updated_on:new Date()}})
+{ "acknowledged" : true, "matchedCount" : 4, "modifiedCount" : 4 }
